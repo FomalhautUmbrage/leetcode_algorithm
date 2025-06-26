@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90eb7bd6-d629-4299-8953-53d70b5bf8fc" name="Changes" comment="edit readme">
-      <change afterPath="$PROJECT_DIR$/5. Longest Palindromic Substring,md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6. Zigzag Conversion.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5. Longest Palindromic Substring,md" beforeDir="false" afterPath="$PROJECT_DIR$/5. Longest Palindromic Substring.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748922376714</updated>
-      <workItem from="1748922378428" duration="3640000" />
+      <workItem from="1748922378428" duration="4470000" />
     </task>
     <task id="LOCAL-00001" summary="new algorithm practice">
       <option name="closed" value="true" />
