@@ -1,0 +1,92 @@
+# Learning Notes: Longest Palindromic Substring
+
+## Problem Description
+
+Given a string `s`, return the longest palindromic substring in `s`.
+
+**Examples**
+
+* Input: `s = "babad"`
+  Output: `"bab"` (Note: "aba" is also valid.)
+* Input: `s = "cbbd"`
+  Output: `"bb"`
+
+**Constraints**
+
+* `1 <= s.length <= 1000`
+* `s` consists of digits and English letters
+
+---
+
+## Solution Code
+
+```python
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        res = ""
+        for i in range(len(s)):
+            # Check odd-length centers (j = i)
+            # and even-length centers (j = i + 1)
+            for j in (i, i + 1):
+                l, r = i, j
+                # Expand while the characters at l and r match
+                while l >= 0 and r < len(s) and s[l] == s[r]:
+                    l -= 1
+                    r += 1
+                # After expansion, substring s[l+1:r] is a palindrome
+                if r - l - 1 > len(res):
+                    res = s[l + 1 : r]
+        return res
+```
+
+---
+
+## Key Ideas
+
+1. **Expand Around Center**
+   Every palindrome mirrors around its center. There are two center types:
+
+   * **Odd-length**: a single character center, e.g. "aba" → center at 'b'.
+   * **Even-length**: a gap between characters, e.g. "abba" → center between two 'b's.
+
+2. **Two-Pointer Expansion**
+   For each index `i` in the string:
+
+   * Use `j = i` for odd palindromes, and `j = i + 1` for even palindromes.
+   * Initialize pointers `l = i`, `r = j`.
+   * Expand outward while `s[l] == s[r]` and indices stay in bounds.
+   * After the `while` loop, the palindrome is `s[l+1:r]`.
+
+3. **Track the Longest**
+   Compare the length of each found palindrome (`r - l - 1`) with the current result, and update if larger.
+
+4. **Time Complexity**: O(n²) in the worst case (two nested loops plus expansion).
+   **Space Complexity**: O(1) extra space aside from output.
+
+---
+
+## Common Questions & Challenges
+
+1. **Why two inner loops (`j = i` and `j = i + 1`)?**
+
+   * To handle both odd- and even-length palindromes. Skipping one would miss palindromes like "abba" or "aba".
+
+2. **Why is the palindrome substring `s[l+1:r]` and not `s[l:r]`?**
+
+   * After the last successful `while` iteration, pointers moved one step too far (to mismatch or out of range). So the valid palindrome is between `l+1` and `r-1`, hence slice up to `r` but start at `l+1`.
+
+3. **Off-by-one errors when expanding pointers**
+
+   * It’s easy to get wrong bounds. Always test small examples (length 1, 2, 3) and check pointer updates.
+
+4. **Is O(n²) fast enough for `n <= 1000`?**
+
+   * Yes. In practice, 10⁶ character comparisons are acceptable in most environments.
+
+5. **Can this be optimized?**
+
+   * There is Manacher’s algorithm with O(n) time, but it is more complex. The expand-around-center method is easier to implement and understand.
+
+---
+
+**Tip**: Draw the string and mark `l` and `r` visually when stepping through example inputs to build intuition on pointer movement.

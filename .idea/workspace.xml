@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90eb7bd6-d629-4299-8953-53d70b5bf8fc" name="Changes" comment="edit readme">
-      <change afterPath="$PROJECT_DIR$/3. Longest Substring Without Repeating Characters.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5. Longest Palindromic Substring,md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748922376714</updated>
-      <workItem from="1748922378428" duration="2948000" />
+      <workItem from="1748922378428" duration="3640000" />
     </task>
     <task id="LOCAL-00001" summary="new algorithm practice">
       <option name="closed" value="true" />
